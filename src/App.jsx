@@ -1,15 +1,34 @@
+import { Outlet, createBrowserRouter } from 'react-router-dom'
 import './App.css'
 import HomePage from './pages/HomePage'
+import PostDetailScreenPage from './pages/PostDetailScreenPage'
 
-function App() {
 
-  return (
+const AppLayout = ()=>{
+  return(
     <>
-      <div className='mb-8'>
-        <HomePage/>
-      </div>
+      <Outlet/>
     </>
   )
 }
 
-export default App
+const router = createBrowserRouter([
+  {
+    path:"/",
+    element:<AppLayout/>,
+    children:[
+      {
+        path:"/",
+        element:<HomePage/>
+      },
+      {
+        path:":id",
+        element:<PostDetailScreenPage/>
+      }
+    ]
+  }
+])
+
+
+
+export default router
