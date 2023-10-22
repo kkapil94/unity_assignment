@@ -1,0 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik&family=Signika+Negative&display=swap");
+
+body {
+  background: #0f0c29;
+  background: -webkit-linear-gradient(to left, #24243e, #302b63, #0f0c29);
+  background: linear-gradient(to left, #24243e, #302b63, #0f0c29);
+  font-family: "Rubik", sans-serif;
+  font-family: "Signika Negative", sans-serif;
+}
