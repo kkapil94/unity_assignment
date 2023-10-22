@@ -1,9 +1,10 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
+import context from "../context";
 
 export default function Home() {
   const [query, setQuery] = useState("");
-  const [result, setResult] = useState();
+  const {result,setResult} = useContext(context)
   const handleQuery = async (e) => {
     setQuery(e.target.value);
     if(!query)
@@ -42,10 +43,10 @@ export default function Home() {
               Search
             </button>
           </form>
-          {query && result && <div className="w-2/5 p-4 mr-20 bg-[#170640] rounded-md text-slate-400">
+          {query && result.length && <div className="w-2/5 mr-20 bg-[#170640] rounded-md text-slate-400">
             <ul className="h-72 overflow-auto">
               {result?.hits?.map((item) => (
-                <li className="min-h-8 flex items-center mb-4">
+                <li className="min-h-8 p-4  flex items-center cursor-pointer rounded-md hover:bg-[#120432] ">
                   <img className="h-6 mr-2" src="/images/search.svg" alt="" />{item.title}
                 </li>
               ))}
