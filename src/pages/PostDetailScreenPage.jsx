@@ -32,7 +32,10 @@ export default function PostDetailScreenPage() {
               <ul className='w-3/5'>
                 {
                   postData?.children?.map(item=>(
-                    <li className='list-disc text-slate-300 mb-4'>{item.text}</li>
+                    <li className='list-disc text-slate-300 mb-4'>
+                      <p className='text-justify'>{item.text}</p>
+                      <span className='text-slate-500 flex justify-end mr-4'>{item.author} | {(item.created_at).slice(0,10)}</span>
+                    </li>
                   ))
                 }
               </ul>
