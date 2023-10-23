@@ -2,6 +2,7 @@ import { Outlet, createBrowserRouter } from 'react-router-dom'
 import './App.css'
 import HomePage from './pages/HomePage'
 import PostDetailScreenPage from './pages/PostDetailScreenPage'
+import ErrorComponent from './components/ErrorComponent'
 
 
 const AppLayout = ()=>{
@@ -16,14 +17,17 @@ const router = createBrowserRouter([
   {
     path:"/",
     element:<AppLayout/>,
+    errorElement:<ErrorComponent/>,
     children:[
       {
         path:"/",
-        element:<HomePage/>
+        element:<HomePage/>,
+        errorElement:<ErrorComponent/>
       },
       {
         path:":id",
-        element:<PostDetailScreenPage/>
+        element:<PostDetailScreenPage/>,
+        errorElement:<ErrorComponent/>
       }
     ]
   }

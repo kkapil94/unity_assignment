@@ -49,7 +49,7 @@ export default function Home() {
             <ul className="h-72 overflow-auto">
               {result?.hits?.map((item) => (
                 <li key={item?.objectID} onClick={()=>navigate(`/${item?.objectID}`)} className="min-h-8 p-4 flex items-center cursor-pointer rounded-md hover:bg-[#120432] ">
-                  <img className="h-6 mr-2" src="/images/search.svg" alt="" />{item.title}
+                  <img className="h-6 mr-2" src="/images/search.svg" alt="" />{item?.title}
                 </li>
               ))}
             </ul>
